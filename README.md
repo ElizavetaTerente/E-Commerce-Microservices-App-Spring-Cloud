@@ -1,44 +1,21 @@
-# Multi Service App with Spring Cloud
+# Microservices App with Spring Cloud
 
-Project with simple online shop functionality : login/logout, product list overview, adding products to cart (only for logging in users) etc..
-Done with multi service architecture where every service (auth service, cart service, frontend service, gateway service, product service) it is separate module and needs/can to be runn serapately to seraprate functionality. Gateway works as a coordingator of them.
+This project is a basic e-commerce system demonstrating microservice architecture using Spring Cloud.
 
-Projet replicates huge projects where functionality needs to be separated.
+In a microservice architecture, the application is broken into independent, self-contained services, each responsible for a specific piece of functionality. 
 
-Frontend runs on port 3000
+In this application :
+* __Auth Service__: Manages login/logout, signing in, user authentication.
 
-**краткое описание проекта:**
+* __Product Service__: Manages the list of products.
 
-*(запускается на порту 3000)*
+* __Cart Service__: Manages the shopping cart.
 
-Стартовая страница содержит список всех продуктов и корзину. При попытке добавить продукт в
-корзину выкидывается алерт что для этого нужно войти в систему.
+* __Frontend Service__: UI for users (runs on port 3000).
 
-Есть 2 опции = зарегестрироваться и войти.
-Если пользователь пытается зарегестрироваться с именем которое уже есть в системе или 
-войти под несуществующим именем ,то кидается алерт с соответсвующем сообщением
+* __Gateway Service__: A reverse proxy that routes incoming requests to the correct backend service (via paths like /auth/**, /products/**, etc.).
 
-Есть 2 роли = админ и юзер.
-Админу доступны доп. функции : удалять существующие продукты (из общего списка)
-и добавлять новые.
+Each service runs as a separate module and can be started independently, promoting better scalability, maintainability, and separation of concerns.
+The Gateway serves as a central entry point, coordinating communication between frontend and backend services.
 
-В корзине можно увеличить/уменьшить количество уже существующих товаров или удалить 
-его/их из корзины вовсе.
-
-Интеграционные компоненты в сервисах закомменчены, ибо при моей простой имплементации 
-они не понадобились.
-
-**ВОПРОС:**
-У меня есть gateway service, но он не работает и я вообще не могу понять почему.
-в front-service в index.js в каждом http запросе есть закоменченная строчка на 
-порт 5555(порт gatewayя) c тех временем когда я еще не оставила надежды 
-сделать gateway. Если их откомментить и закомментить @CrossOrigin("*") строку 
-в контроллерах и попробовать запустить, то оно ВСЕГДА выбирывает в консоле браузера 
-CORS policy 'Access-Control-Allow-Origin' missing ЧТОБЫ Я НЕ ПЫТАЛАСЬ СДЕЛАТЬ, хотя в 
-application.yaml gatewayя он вроде как настроен.
-Я поробовала отключить в Chrome CORS policy вообще и тогда выкидывалась ошибка 404
-
-Я Не понимаю в чем проблема..
-
-
-
+This setup replicates how large-scale systems are architected in the real world, where business logic is split across multiple isolated services for better flexibility and reliability.
