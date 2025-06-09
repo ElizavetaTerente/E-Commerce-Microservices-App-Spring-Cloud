@@ -19,3 +19,9 @@ Each service runs as a separate module and can be started independently, promoti
 The Gateway serves as a central entry point, coordinating communication between frontend and backend services.
 
 This setup replicates how large-scale systems are architected in the real world, where business logic is split across multiple isolated services for better flexibility and reliability.
+
+## Sample Users for different Roles
+| Role(s)        	 | Username 	        | Password 	  |
+|------------------|-------------------|-------------|
+| ADMIN          	 | _admin_        	 | _pass_   	 |
+| USER          	 | _user_    	       | _pass_   	 |
