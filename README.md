@@ -25,3 +25,6 @@ This setup replicates how large-scale systems are architected in the real world,
 |------------------|-------------------|-------------|
 | ADMIN          	 | _admin_        	 | _pass_   	 |
 | USER          	 | _user_    	       | _pass_   	 |
+
+![whole](https://github.com/user-attachments/assets/ad3efaef-106e-4b07-b58f-a56cc06ab727)
+
