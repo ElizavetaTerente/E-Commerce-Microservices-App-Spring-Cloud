@@ -1,3 +1,12 @@
+# Multi Service App with Spring Cloud
+
+Project with simple online shop functionality : login/logout, product list overview, adding products to cart (only for logging in users) etc..
+Done with multi service architecture where every service (auth service, cart service, frontend service, gateway service, product service) it is separate module and needs/can to be runn serapately to seraprate functionality. Gateway works as a coordingator of them.
+
+Projet replicates huge projects where functionality needs to be separated.
+
+Frontend runs on port 3000
+
 **краткое описание проекта:**
 
 *(запускается на порту 3000)*
